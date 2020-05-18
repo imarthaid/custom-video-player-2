@@ -26,14 +26,11 @@ function updateButton() {
 }
 
 function skip() {
-    console.log(this.dataset.skip);
     video.currentTime += parseFloat(this.dataset.skip);
 }
 
 function handleRangeUpdate() {
     video[this.name] = this.value;
-    console.log(this.name)
-    console.log(this.value)
 }
 
 function handleProgess() {
@@ -42,7 +39,8 @@ function handleProgess() {
 }
 
 function scrub(e) {
-    console.log(e);
+    let scrubTime = (e.offsetX / boxBar.offsetWidth) * video.duration;
+    video.currentTime = scrubTime;
 }
 
 // Hook up the event listener
@@ -57,5 +55,13 @@ boxBar.addEventListener('click', scrub);
 document.body.onkeyup = function (e) {
     if (e.keyCode == 32) {
         video.paused ? video.play() : video.pause();
+    } else if (e.keyCode == 39) {
+        video.currentTime += 5;
+    } else if (e.keyCode == 37) {
+        video.currentTime -= 5;
+    } else if (e.keyCode == 38) {
+        video.volume += 0.05;
+    } else if (e.keyCode == 40) {
+        video.volume -= 0.05;
     }
 }
