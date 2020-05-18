@@ -1,0 +1,217 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* ================= My Style ================== */
+
+.player {
+    display: flex;
+    background-color: #eee;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container-video {
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    overflow: hidden;
+}
+
+.container-video:hover .controls {
+    transform: translateY(0);
+}
+
+.video {
+    width: 100%;
+    display: block;
+}
+
+.controls {
+    padding: 10px;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    flex-wrap: wrap;
+    background-color: rgba(0, 0, 0, 0.2);
+    transform: translateY(100%) translateY(-3px);
+    transition: all .3s;
+}
+
+button.play {
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    padding: 5px 10px;
+    background: none;
+    color: #fff;
+    font-size: 20px;
+}
+
+button.skip-button {
+    background-color: #fff;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    padding: 5px 7px;
+    margin-right: 5px;
+}
+
+.box-bar {
+    position: absolute;
+    height: 4px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.452);
+
+}
+
+.box-bar:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.11);
+}
+
+.play-bar {
+    height: 4px;
+    width: 0%;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+input {
+    width: 40%;
+}
